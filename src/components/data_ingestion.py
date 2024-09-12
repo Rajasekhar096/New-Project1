@@ -46,7 +46,6 @@ class DataIngestion:
             return(
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
-
             )
         except Exception as e:
             raise CustomException(e,sys)
@@ -58,5 +57,5 @@ if __name__=="__main__":
     data_transformation=DataTransformation()
     train_arr,test_arr,_  = data_transformation.initiate_data_transformation(train_data,test_data)
 
-    modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    model_trainer=ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr,test_arr))
